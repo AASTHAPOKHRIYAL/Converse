@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "460369710555",
+    "project_id": "converse-3ed86",
+    "storage_bucket": "converse-3ed86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460369710555:android:e3a06b72c1d51888cd6bfe",
+        "android_client_info": {
+          "package_name": "com.example.converse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGzWjTYVyNiaI4y8oM6fx-YqaPi9UBOYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
