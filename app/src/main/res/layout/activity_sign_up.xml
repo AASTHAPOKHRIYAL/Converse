@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SignUp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:fontFamily="sans-serif"
+        android:gravity="top"
+        android:text="Lets get started!"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="15dp"
+        android:contentDescription="decorative image"
+        android:src="@drawable/chatting_app"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="352dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/imageView"
+        android:layout_margin="15dp"
+        android:background="#2EA6FD"
+        android:contentDescription="sign_up_button_sign_up_pg"
+        android:text="SignUp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#101010"
+        app:strokeWidth="1dp">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="168dp"
+        android:fontFamily="sans-serif"
+        android:text="Already have an account?"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:contentDescription="login_button_sign_up_pg"
+        android:fontFamily="sans-serif"
+        android:paddingStart="2dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="16dp"
+        android:text="Login"
+        android:textColor="#357A99"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/button2">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
