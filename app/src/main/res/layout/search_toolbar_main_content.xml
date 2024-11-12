@@ -8,6 +8,11 @@
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
     <!-- Back button or Hamburger icon (optional, if using drawer layout) -->
     <ImageButton
         android:id="@+id/back_button"
@@ -18,10 +23,10 @@
         android:contentDescription="Back" />
 
     <!-- Search input field -->
-    <androidx.appcompat.widget.SearchView
+    <EditText
         android:id="@+id/search_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:queryHint="Search chats"
         android:iconifiedByDefault="false"
@@ -34,6 +39,9 @@
         android:layout_height="match_parent"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/baseline_search_24"
-        android:contentDescription="Search" />
+        android:contentDescription="Search"
+        />
+
+    </LinearLayout>
 
 </com.google.android.material.appbar.MaterialToolbar>

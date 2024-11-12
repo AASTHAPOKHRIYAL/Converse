@@ -3,6 +3,7 @@ package com.example.converse.Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,12 @@ public class ChatAdapter extends RecyclerView.Adapter{
 //    String receiverId;
     int SENDER_VIEW_TYPE = 1;
     int RECEIVER_VIEW_TYPE = 2;
+    String receiverId;
 
-    public ChatAdapter(Context context, ArrayList<MessagesModel> messagesModels) {
+    public ChatAdapter(Context context, ArrayList<MessagesModel> messagesModels, String receiverId) {
         this.context = context;
         this.messagesModels = messagesModels;
+        this.receiverId=receiverId;
     }
 
     @NonNull
@@ -85,9 +88,12 @@ public class ChatAdapter extends RecyclerView.Adapter{
 //                            public void onClick(DialogInterface dialog, int which) {
 //                                FirebaseDatabase database = FirebaseDatabase.getInstance();
 //                                String senderRoom = FirebaseAuth.getInstance().getUid() + receiverId;
-//                                database.getReference().child("child")
+//
+//                                Log.d("Hmm", "UID: " + senderRoom);
+//
+//                                database.getReference().child("chats")
 //                                        .child(senderRoom)
-//                                        .child(messagesModel.getUid())
+//                                        .child(messagesModel.getMessageId())
 //                                        .setValue(null);
 //                            }
 //                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {

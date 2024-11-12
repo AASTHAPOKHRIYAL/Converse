@@ -18,10 +18,10 @@ public class Features extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 4000);
+        }, 2000);
     }
 }

@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.ChatsFragment"
-    android:background="@color/white">
+    android:background="@color/black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/black">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/white"
+                android:background="@color/black"
                 android:orientation="horizontal">
 
                 <Space
@@ -42,7 +42,7 @@
                     android:textStyle="bold"
                     android:textSize="30dp"
                     android:layout_margin="10dp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:gravity="center_horizontal"/>
 
                 <Space
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chats"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             android:padding="15dp"

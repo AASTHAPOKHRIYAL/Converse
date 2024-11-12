@@ -4,6 +4,16 @@ public class MessagesModel {
 
     String uid, message;
     Long timestamp;
+    String messageId;
+
+    public String getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(String messageId) {
+        this.messageId = messageId;
+    }
+
 
     public MessagesModel(String uid, String message, Long timestamp) {
         this.uid = uid;

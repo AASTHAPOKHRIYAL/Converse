@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.converse.Activity.Chat_window;
+import com.example.converse.Activity.ZoomProfilePhoto;
 import com.example.converse.Models.Users;
 import com.example.converse.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -63,27 +64,41 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
                 intent.putExtra("uid", users.getUserId());
                 intent.putExtra("username", users.getUserName());
                 intent.putExtra("profilePhoto", users.getProfilePhoto());
+
+                Log.d("Haha", "sender id adapter" + users.getUserId());
+
                 context.startActivity(intent);
             }
         });
 
-//        FirebaseDatabase.getInstance().getReference().child("chats").child(FirebaseAuth.getInstance().getUid()+ users.getUserId()).orderByChild("timestamp").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.hasChildren())
-//                {
-//                    for(DataSnapshot snapshot1 : snapshot.getChildren())
-//                    {
-//                        holder.last_message.setText(Objects.requireNonNull(snapshot1.child("message").getValue()).toString());
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ZoomProfilePhoto.class);
+                intent.putExtra("username", users.getUserName());
+                intent.putExtra("profilePhoto", users.getProfilePhoto());
+                context.startActivity(intent);
+            }
+        });
+
+        FirebaseDatabase.getInstance().getReference().child("chats").child(FirebaseAuth.getInstance().getUid()+ users.getUserId()).orderByChild("timestamp").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChildren())
+                {
+                    for(DataSnapshot snapshot1 : snapshot.getChildren())
+                    {
+                        holder.last_message.setText(Objects.requireNonNull(snapshot1.child("message").getValue()).toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     // Method to filter the list based on the search query

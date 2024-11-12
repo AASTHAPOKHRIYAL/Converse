@@ -13,6 +13,7 @@
         android:title="Mute notifications"/>
 
     <item android:id="@+id/more"
+        android:icon="@drawable/baseline_keyboard_arrow_right_24"
         android:title="More"/>
 
 </menu>

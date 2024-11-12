@@ -1,6 +1,7 @@
 package com.example.converse.Fragment;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -10,16 +11,23 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.converse.Activity.CallSubactivity;
 import com.example.converse.Adapter.CallAdapter;
 import com.example.converse.Models.Users;
+import com.example.converse.Repository.MainRepository;
 import com.example.converse.databinding.FragmentCallBinding;
+import com.example.converse.utility.DataModelType;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -32,6 +40,8 @@ public class CallFragment extends Fragment {
     private int requestCode = 1;
     ArrayList<Users> contacts = new ArrayList<>();
     FirebaseDatabase database;
+    MainRepository mainRepository;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +51,7 @@ public class CallFragment extends Fragment {
         View view = binding.getRoot();
 
         database = FirebaseDatabase.getInstance();
+        Log.d("TAG", "we are in the call fragment");
 
         callAdapter = new CallAdapter(contacts, getContext());
         binding.recyclerView.setAdapter(callAdapter);
@@ -73,6 +84,38 @@ public class CallFragment extends Fragment {
             }
         });
 
+        binding.addCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CallSubactivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        binding.searchContact.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                if(binding.searchContact.getText().toString().equals(""))
+//                {
+//                    Toast.makeText(getContext(), "Please enter a name", Toast.LENGTH_SHORT).show();
+//                }
+//                else
+//                {
+//                    str = s.toString();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
 
 //        button.setOnClickListener()
 //        {
@@ -86,19 +129,22 @@ public class CallFragment extends Fragment {
         return view;
     }
 
-    void askPermissions()
-    {
-        ActivityCompat.requestPermissions(getActivity(), permissions, requestCode);
-    }
 
-    private boolean permissionGranted(){
-        for(String permission: permissions){
-            if(ActivityCompat.checkSelfPermission(getContext(), permission) != PackageManager.PERMISSION_GRANTED)
-            {
-                return false;
-            }
-        }
 
-        return true;
-    }
+//    void askPermissions()
+//    {
+//        ActivityCompat.requestPermissions(getActivity(), permissions, requestCode);
+//    }
+//
+//    private boolean permissionGranted(){
+//        for(String permission: permissions){
+//            if(ActivityCompat.checkSelfPermission(getContext(), permission) != PackageManager.PERMISSION_GRANTED)
+//            {
+//                return false;
+//            }
+//        }
+//
+//        return true;
+//    }
+
 }

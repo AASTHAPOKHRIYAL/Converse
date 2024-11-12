@@ -193,7 +193,7 @@ public class LoginFragment extends BottomSheetDialogFragment {
                 if (task.isSuccessful()) {
                     FirebaseUser user = auth.getCurrentUser();
                     if (user != null) {
-                        Users users = new Users(user.getDisplayName(), user.getEmail(), "");
+                        Users users = new Users(user.getDisplayName(), user.getEmail(), "", user.getUid());
                         if (user.getPhotoUrl() != null) {
                             users.setProfilePhoto(user.getPhotoUrl().toString());
                         }

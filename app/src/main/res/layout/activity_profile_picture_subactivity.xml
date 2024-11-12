@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/black"
     tools:context=".Activity.Profile_Picture_Subactivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:layout_margin="10dp"
-        android:background="@color/white"
+        android:background="@color/black"
         app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +27,9 @@
                 android:id="@+id/back_arrow"
                 android:layout_width="56dp"
                 android:layout_height="54dp"
-                android:background="@color/white"
                 android:contentDescription="@string/back_arrow_chats_window"
                 android:padding="10dp"
+                android:background="@color/black"
                 android:src="@drawable/baseline_arrow_back_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/heading"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="96dp"
                 android:text="Profile"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -53,24 +53,18 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView1"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:elevation="8dp"
-        android:layout_marginTop="10dp"
-        app:cardBackgroundColor="@color/ligh_light_blue"
-        app:cardCornerRadius="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent">
-
         <androidx.cardview.widget.CardView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
+            android:id="@+id/cardView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
             android:elevation="8dp"
-            app:cardCornerRadius="25dp">
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
                 android:id="@+id/image"
@@ -81,31 +75,19 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:contentDescription="Profile picture"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/user" />
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:elevation="8dp"
-        app:cardBackgroundColor="@color/ligh_light_blue"
-        app:cardCornerRadius="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView1"
-        app:layout_constraintEnd_toEndOf="@+id/cardView1">
-
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:id="@+id/cardView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:elevation="8dp"
-            app:cardCornerRadius="25dp">
+            app:cardCornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView1"
+            app:layout_constraintEnd_toEndOf="@+id/cardView1">
 
             <ImageView
                 android:id="@+id/plus"
@@ -113,16 +95,13 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:background="@color/white"
                 android:clickable="true"
                 android:contentDescription="Profile picture"
-                android:padding="10dp"
+                android:background="@color/black"
                 android:scaleType="centerCrop"
                 android:src="@drawable/baseline_add_circle_24" />
 
         </androidx.cardview.widget.CardView>
-
-    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/nameLinearLayout"
@@ -143,7 +122,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_margin="10dp"
-            android:src="@drawable/user"
+            android:src="@drawable/account"
             android:contentDescription="Username"/>
 
 
@@ -153,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Username"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <EditText
@@ -165,7 +144,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -190,6 +169,7 @@
             android:layout_margin="10dp"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
+            android:background="@color/white"
             android:contentDescription="aboutIcon"/>
 
         <TextView
@@ -198,7 +178,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="26dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="About"
             android:textSize="20sp" />
 
@@ -211,7 +191,7 @@
             android:hint="Enter bio"
             android:inputType="none"
             android:layout_marginStart="26dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -221,8 +201,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:background="@color/white"
         android:text="Update"
-        android:background="@drawable/custom_buttons"
+        android:textColor="@color/black"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboutLinearLayout" />
@@ -231,6 +213,7 @@
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

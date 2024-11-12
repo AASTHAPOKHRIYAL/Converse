@@ -58,4 +58,9 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.mesibo.api:webrtc:1.0.5")
+    implementation("com.guolindev.permissionx:permissionx:1.6.1")
+
+
 }
