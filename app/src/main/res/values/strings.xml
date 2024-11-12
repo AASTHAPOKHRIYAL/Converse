@@ -8,4 +8,8 @@
     <string name="back_arrow_chats_window">Back_arrow_chats_window</string>
     <string name="camera_chats_window">camera_chat_window</string>
     <string name="stickers_chats_window">microphone_chat_window</string>
+    <string name="voice_calls_or_video_calls">Voice calls or video calls</string>
+    <string name="break_the_ice">Break the ice</string>
+    <string name="seemless_calls">Seemless calls</string>
+    <string name="chat_with_your_friends_and_family">Chat with your friends and family</string>
 </resources>

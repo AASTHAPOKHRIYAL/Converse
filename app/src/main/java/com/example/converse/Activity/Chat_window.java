@@ -44,6 +44,9 @@ public class Chat_window extends AppCompatActivity {
 
         final String senderId = auth.getUid(); //TAKEN FROM FIREBASE, THE USER WHO LOGGED IN IS THE SENDER
         String receiverId = getIntent().getStringExtra("uid"); // EXTRACTING FROM ADAPTER
+
+        Log.d("Haha", "sender id" + senderId);
+        Log.d("Haha", "receiver id" + receiverId);
 //        if (receiverId == null || receiverId.isEmpty()) {
 //            Log.e("Chat_window", "Receiver ID is null or empty!");
 //        } else {
@@ -62,7 +65,7 @@ public class Chat_window extends AppCompatActivity {
         });
 
         final ArrayList<MessagesModel> messagesModels = new ArrayList<>();
-        final ChatAdapter chatAdapter = new ChatAdapter(this, messagesModels);
+        final ChatAdapter chatAdapter = new ChatAdapter(this, messagesModels, receiverId);
 
         binding.chatRecyclerView.setAdapter(chatAdapter); //SET ADAPTER TO LayoutInflater
 
@@ -75,6 +78,10 @@ public class Chat_window extends AppCompatActivity {
         final String senderRoom = senderId + receiverId;
         final String receiverRoom = receiverId + senderId;
 
+        Log.d("Haha", "sender room" + senderRoom);
+        Log.d("Haha", "receiver room" + receiverRoom);
+
+
         database.getReference().child("chats") //SHOWING MESSAGES TO THE SENDER FROM FIREBASE
                 .child(senderRoom)
                 .addValueEventListener(new ValueEventListener() {
@@ -84,6 +91,7 @@ public class Chat_window extends AppCompatActivity {
                         for(DataSnapshot snapshot1 : snapshot.getChildren())
                         {
                             MessagesModel model = snapshot1.getValue(MessagesModel.class);
+
                             messagesModels.add(model);
                         }
 
@@ -114,12 +122,16 @@ public class Chat_window extends AppCompatActivity {
                 model.setTimestamp(new Date().getTime());
                 binding.messageInput.setText("");
 
-                database.getReference().child("chats")
+                database.getReference().child("chats") //FIRST TIME CREATING CHATS NODE
                     .child(senderRoom)
                     .push()
                     .setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
+
+//                                String messageId = database.getReference().child("chats").child(senderRoom).push().getKey();
+//                                model.setMessageId(messageId); // Set the messageId in the model
+
                                 Log.d("Chat_window", "Message sent to Sender Node: " + senderRoom);
                                 database.getReference().child("chats")
                                         .child(receiverRoom)

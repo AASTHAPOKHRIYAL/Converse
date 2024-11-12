@@ -122,9 +122,9 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressDialog.dismiss();
                                 if (task.isSuccessful()) {
-                                    Users user = new Users(Objects.requireNonNull(usernameText.getText()).toString(), emailText.getText().toString(), passwordText.getText().toString());
 
                                     String uid = Objects.requireNonNull(task.getResult().getUser()).getUid();
+                                    Users user = new Users(Objects.requireNonNull(usernameText.getText()).toString(), emailText.getText().toString(), passwordText.getText().toString(), uid);
                                     database.getReference().child("Users").child(uid).setValue(user);
 
                                     Intent intent = new Intent(getActivity(), MainPage.class);
@@ -187,7 +187,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                     FirebaseUser user = auth.getCurrentUser();
 
                     if (user != null) {
-                        Users users = new Users(user.getDisplayName(), user.getEmail(), ""); // Assuming password is not needed for Google sign-in
+                        Users users = new Users(user.getDisplayName(), user.getEmail(), "", user.getUid()); // Assuming password is not needed for Google sign-in
 
                         if (user.getPhotoUrl() != null) {
                             users.setProfilePhoto(user.getPhotoUrl().toString());

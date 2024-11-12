@@ -95,17 +95,17 @@
         <Button
             android:id="@+id/signUpButton"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
-            android:background="@color/black"
-            android:contentDescription="sign_up"
+            android:padding="15dp"
+            android:backgroundTint="@color/black"
             android:text="Sign Up"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:fontFamily="sans-serif"
-            app:cornerRadius="8dp"
-            app:strokeColor="#101010"
-            app:strokeWidth="1dp"/>
+            app:cornerRadius="15dp"
+            android:contentDescription="sign_up"/>
 
         <TextView
             android:id="@+id/textView2"

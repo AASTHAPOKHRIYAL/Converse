@@ -54,7 +54,7 @@ ImageView main_icon;
             startActivity(intent);
             overridePendingTransition(R.anim.features_right_slide_animation, R.anim.slapsh_screen_slid_animation);
             finish();
-        },6000);
+        },4000);
     }
 
     }

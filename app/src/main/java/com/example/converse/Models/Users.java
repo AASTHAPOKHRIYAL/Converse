@@ -108,10 +108,11 @@ public class Users {
     public Users(){}
 
     //SignUp constructor
-    public Users(String userName, String email, String password) {
+    public Users(String userName, String email, String password, String userId) {
         this.userName = userName;
         this.email = email;
         this.password = password;
+        this.userId = userId;
     }
 
 

@@ -2,10 +2,13 @@ package com.example.converse.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,10 +19,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.converse.Activity.SignUp;
+import com.example.converse.Activity.ZoomProfilePhoto;
 import com.example.converse.Adapter.UsersAdapter;
 import com.example.converse.Models.Users;
 import com.example.converse.R;
@@ -45,6 +50,9 @@ public class ChatsFragment extends Fragment {
     TextView heading;
     TextView chats_text;
     UsersAdapter adapter;
+    EditText search_view;
+    ImageView profile_photo;
+    private String str="";
 
 //    private boolean isToolbarHidden = false;
 
@@ -61,6 +69,9 @@ public class ChatsFragment extends Fragment {
         search_toolbar = view.findViewById(R.id.search_toolbar);
         heading = view.findViewById(R.id.heading);
         chats_text = view.findViewById(R.id.chats_text);
+        search_view = view.findViewById(R.id.search_view);
+        profile_photo = view.findViewById(R.id.profile_image);
+
 
         adapter = new UsersAdapter(list, getContext());
         chatRecyclerView.setAdapter(adapter);
@@ -108,6 +119,7 @@ public class ChatsFragment extends Fragment {
 //
 //                                if (userId != null && !userId.equals(currentUserId)) {
                     user.getUserId(dataSnapshot.getKey());
+                    Log.d("Flag", "Receiver id : " + user.getUserId());
                     list.add(user);
                     Log.d("TAG", "Data fetched again: ");
                 }
@@ -174,8 +186,15 @@ public class ChatsFragment extends Fragment {
                 auth.signOut();
                 Intent intent = new Intent(getActivity(), SignUp.class);
                 startActivity(intent);
+
             } else if (id == R.id.settings) {
-                Toast.makeText(getContext(), "Settings clicked", Toast.LENGTH_SHORT).show();
+                // OPENING PROFILE FRAGMENT FROM CHATS FRAGMENT WHEN SETTINGS IS CLICKED
+                ProfileFragment profileFragment = new ProfileFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout, profileFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
             } else if (id == R.id.help) {
                 Toast.makeText(getContext(), "Help clicked", Toast.LENGTH_SHORT).show();
             } else {
@@ -184,10 +203,37 @@ public class ChatsFragment extends Fragment {
             return true;
         });
 
+//        search_view.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                str=s.toString();
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+
+
+
 
         return view;
     }
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        Fire
+//    }
 }
+
+
 
 //    @Override
 //    public void onBackPressed() {

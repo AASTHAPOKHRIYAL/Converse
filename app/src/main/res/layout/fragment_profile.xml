@@ -1,34 +1,34 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grayish_orange">
+    android:background="@color/black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profile_quote"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:background="@color/ligh_light_blue">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView1"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:elevation="8dp"
-            android:layout_marginTop="20dp"
-            app:cardBackgroundColor="@color/ligh_light_blue"
-            app:cardCornerRadius="60dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:id="@+id/cardView1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
                 android:elevation="8dp"
-                app:cardCornerRadius="25dp">
+                app:cardCornerRadius="50dp"
+                app:cardBackgroundColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/image"
@@ -39,67 +39,69 @@
                     android:background="@color/white"
                     android:clickable="true"
                     android:contentDescription="Profile picture"
-                    android:padding="10dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/user" />
 
             </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
         <TextView
             android:id="@+id/profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Miranda West"
-            android:textStyle="bold"
-            android:textSize="18sp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/cardView1"
+            android:text="Miranda West"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView1" />
 
         <TextView
             android:id="@+id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Work hard in silence. Let your success be the noise."
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:padding="10dp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_name" />
+            app:layout_constraintTop_toBottomOf="@+id/profile_name"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/ligh_light_blue">
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/black"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_quote">
 
 
         <LinearLayout
             android:id="@+id/options_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <!-- Option 1 -->
-
-            <!-- Repeat for other options -->
 
             <LinearLayout
                 android:id="@+id/profile_picture_layout"
@@ -110,30 +112,30 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/baseline_add_a_photo_24"
-                    android:contentDescription="profile picture"/>
+                    android:contentDescription="profile picture"
+                    android:src="@drawable/baseline_add_a_photo_24" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="Profile Picture"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/next_profile_picture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_keyboard_arrow_right_24"
-                    android:contentDescription="next arrow"/>
+                    android:contentDescription="next arrow"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24" />
 
             </LinearLayout>
 
@@ -145,30 +147,30 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/baseline_account_24"
-                    android:contentDescription="my account"/>
+                    android:contentDescription="my account"
+                    android:src="@drawable/baseline_account_24" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="My Account"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/next_my_account"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_keyboard_arrow_right_24"
-                    android:contentDescription="next arrow"/>
+                    android:contentDescription="next arrow"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24" />
 
             </LinearLayout>
 
@@ -179,10 +181,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
+            android:gravity="bottom"
             android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:gravity="bottom"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -197,30 +199,30 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/baseline_notifications_24"
-                    android:contentDescription="notifications"/>
+                    android:contentDescription="notifications"
+                    android:src="@drawable/baseline_notifications_24" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="Notifications"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/next_notifications"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_keyboard_arrow_right_24"
-                    android:contentDescription="next arrow"/>
+                    android:contentDescription="next arrow"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24" />
 
             </LinearLayout>
 
@@ -233,31 +235,31 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/baseline_devices_24"
-                    android:contentDescription="devices"/>
+                    android:contentDescription="devices"
+                    android:src="@drawable/baseline_devices_24" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="Devices"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/next_devices"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="next arrow"
                     android:focusable="true"
-                    android:src="@drawable/baseline_keyboard_arrow_right_24"
-                    android:contentDescription="next arrow"/>
+                    android:src="@drawable/baseline_keyboard_arrow_right_24" />
 
             </LinearLayout>
 
@@ -270,32 +272,32 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/baseline_passwords_24"
-                    android:contentDescription="privacy" />
+                    android:contentDescription="privacy"
+                    android:src="@drawable/baseline_passwords_24" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:focusable="true"
                     android:text="Privacy"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/next_privacy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="next arrow"
                     android:focusable="true"
-                    android:src="@drawable/baseline_keyboard_arrow_right_24"
-                    android:contentDescription="next arrow"/>
+                    android:src="@drawable/baseline_keyboard_arrow_right_24" />
 
             </LinearLayout>
 
@@ -307,30 +309,30 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/baseline_language_24"
-                    android:contentDescription="language"/>
+                    android:contentDescription="language"
+                    android:src="@drawable/baseline_language_24" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="Language"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/next_language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_keyboard_arrow_right_24"
-                    android:contentDescription="next arrow"/>
+                    android:contentDescription="next arrow"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24" />
 
             </LinearLayout>
 
@@ -338,4 +340,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
