@@ -10,4 +10,6 @@
     <color name="ligh_light_blue">#DEE9FD</color>
     <color name="grayish_orange">#FDF2DE</color>
     <color name="metallic_grey">#BFC0B2</color>
+    <color name="grey">#f5f5f5</color>
+    <color name="dark_purple">#8462a3</color>
 </resources>

@@ -27,6 +27,10 @@
         android:theme="@style/Theme.Converse"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Account_created_popup_activity"
+            android:exported="false"
+            android:theme="@style/Theme.Converse" />
+        <activity
             android:name=".Activity.ZoomProfilePhoto"
             android:exported="false" />
         <activity

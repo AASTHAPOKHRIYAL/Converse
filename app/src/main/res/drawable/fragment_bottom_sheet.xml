@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/signUpFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signUpFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.BottomSheetFragment"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".Fragment.BottomSheetFragment">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -17,10 +17,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:textColorHint="@color/black"
-        app:hintTextColor="@color/black"
-        app:boxStrokeColor="@color/black"
         android:hint="Username"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,7 +29,7 @@
             android:id="@+id/usernameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -39,10 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:textColorHint="@color/black"
-        app:hintTextColor="@color/black"
-        app:boxStrokeColor="@color/black"
         android:hint="Email"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameTextLayout">
@@ -51,7 +51,7 @@
             android:id="@+id/emailText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -61,25 +61,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:textColorHint="@color/black"
-        app:endIconTint="@color/black"
-        app:hintTextColor="@color/black"
-        app:boxStrokeColor="@color/black"
+        android:background="@color/white"
         android:hint="Password"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
         app:counterEnabled="true"
         app:counterMaxLength="10"
         app:counterTextColor="@color/black"
         app:endIconMode="password_toggle"
+        app:endIconTint="@color/black"
+        app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextLayout"
-        android:background="@color/white">
+        app:layout_constraintTop_toBottomOf="@+id/emailTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordText"
-            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,6 +89,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:contentDescription="SignUp"
         android:text="SignUp"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -98,16 +99,15 @@
         app:layout_constraintStart_toStartOf="@+id/usernameTextLayout"
         app:layout_constraintTop_toBottomOf="@id/passwordTextLayout"
         app:strokeColor="@color/black"
-        app:strokeWidth="1dp"
-        android:contentDescription="SignUp"/>
+        app:strokeWidth="1dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:textColor="@color/black"
         android:text="Or"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/signUpButton"
@@ -138,10 +138,10 @@
             android:id="@+id/google"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:paddingEnd="10dp"
+            android:background="@drawable/google"
+            android:contentDescription="Google"
             android:paddingStart="10dp"
-           android:background="@drawable/google"
-            android:contentDescription="Google">
+            android:paddingEnd="10dp">
 
         </ImageButton>
 
@@ -153,10 +153,10 @@
         <ImageButton
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
             android:background="@drawable/facebook"
-            android:contentDescription="facebook">
+            android:contentDescription="facebook"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
         </ImageButton>
 
@@ -168,10 +168,10 @@
             android:id="@+id/call"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
             android:background="@drawable/call"
-            android:contentDescription="phone_number">
+            android:contentDescription="phone_number"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
         </ImageButton>
 
@@ -205,6 +205,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
+        android:contentDescription="login"
         android:paddingTop="50dp"
         android:text="Log_in"
         android:textColor="#357A99"
@@ -212,8 +213,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        android:contentDescription="login">
+        app:layout_constraintStart_toEndOf="@+id/textView4">
 
     </TextView>
 

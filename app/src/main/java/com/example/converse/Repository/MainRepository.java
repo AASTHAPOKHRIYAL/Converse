@@ -11,24 +11,23 @@ import com.example.converse.utility.SuccessCallback;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainRepository {
+    private static MainRepository instance;
     private FirebaseClient firebaseClient;
     private String currentUsername;
-
-    private void updateCurrentUsername(String username) {
-        this.currentUsername = username;
-    }
 
     private MainRepository() {
         this.firebaseClient = new FirebaseClient();
     }
-
-    private static MainRepository instance;
 
     public static MainRepository getInstance() {
         if (instance == null) {
             instance = new MainRepository();
         }
         return instance;
+    }
+
+    private void updateCurrentUsername(String username) {
+        this.currentUsername = username;
     }
 
     public void login(String username, SuccessCallback callBack) {

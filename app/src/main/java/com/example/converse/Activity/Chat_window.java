@@ -2,7 +2,12 @@ package com.example.converse.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,8 +29,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 public class Chat_window extends AppCompatActivity {
 
@@ -82,15 +89,24 @@ public class Chat_window extends AppCompatActivity {
         Log.d("Haha", "receiver room" + receiverRoom);
 
 
-        database.getReference().child("chats") //SHOWING MESSAGES TO THE SENDER FROM FIREBASE
+        database.getReference().child("chats") //SHOWING MESSAGES TO THE SENDER FROM FIREBASE, ALSO SETTING DATA IN MESSAGES MODEL FOR FUTURE USE IN ADAPTER
                 .child(senderRoom)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         messagesModels.clear();
-                        for(DataSnapshot snapshot1 : snapshot.getChildren())
-                        {
+                        for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                             MessagesModel model = snapshot1.getValue(MessagesModel.class);
+
+                            model.setMessageId(snapshot1.getKey());
+
+//                            if (model != null && model.getTimestamp() > 0) {
+//                                // Format the timestamp into a readable time
+//                                String formattedTime = new SimpleDateFormat("hh:mm a", Locale.getDefault())
+//                                        .format(new Date(model.getTimestamp()));
+//                                Log.d("Chat_window", "Message time: " + formattedTime);
+//
+//                            }
 
                             messagesModels.add(model);
                         }
@@ -123,9 +139,9 @@ public class Chat_window extends AppCompatActivity {
                 binding.messageInput.setText("");
 
                 database.getReference().child("chats") //FIRST TIME CREATING CHATS NODE
-                    .child(senderRoom)
-                    .push()
-                    .setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        .child(senderRoom)
+                        .push()
+                        .setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
 
@@ -147,44 +163,44 @@ public class Chat_window extends AppCompatActivity {
             }
         }); //SETTING UP CHATS NODE IN FIREBASE AND SENDING MESSAGE ON SEND BUTTON CLICK
 
-//
-//        binding.messageInput.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                String message = s.toString().trim();
-//                binding.sendButton.setEnabled(!message.isEmpty());
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//            }
-//        });
-//
-//    }
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.drop_down_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//        if (id == R.id.view_contact) {
-//            Toast.makeText(this, "View contact clicked", Toast.LENGTH_LONG).show();  // Increased duration
-////      Intent intent
-////      startActivity(intent) = new Intent(getApplicationContext(), ViewContact.class);;
-//        } else {
-//            Toast.makeText(this, "Something else clicked", Toast.LENGTH_LONG).show();  // Increased duration
-//        }
-//        Log.d("Chats_window", "Menu item selected: " + item.getTitle());  // Log to confirm the item click is detected
-//        return true;
+
+        binding.messageInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String message = s.toString().trim();
+                binding.sendButton.setEnabled(!message.isEmpty());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.drop_down_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.view_contact) {
+            Toast.makeText(this, "View contact clicked", Toast.LENGTH_LONG).show();  // Increased duration
+//      Intent intent
+//      startActivity(intent) = new Intent(getApplicationContext(), ViewContact.class);;
+        } else {
+            Toast.makeText(this, "Something else clicked", Toast.LENGTH_LONG).show();  // Increased duration
+        }
+        Log.d("Chats_window", "Menu item selected: " + item.getTitle());  // Log to confirm the item click is detected
+        return true;
+    }
 }

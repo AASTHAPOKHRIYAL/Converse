@@ -27,7 +27,7 @@ android {
         }
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 
@@ -45,7 +45,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.compose.theme.adapter)
 
-    implementation ("com.squareup.picasso:picasso:2.8") //for loading images in firebase
+    implementation("com.squareup.picasso:picasso:2.8") //for loading images in firebase
 
     implementation(libs.firebase.auth)
     implementation(libs.firebase.bom)
@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.firebase.storage) //to retrieve images from firebase
     implementation("com.google.android.gms:play-services-auth:21.2.0")
     implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

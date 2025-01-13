@@ -7,6 +7,35 @@ public class Users {
     String password;
     String userId;
     String lastMessage;
+    String time;
+    String about;
+    String story;
+
+    public Users(String about, String lastMessage, String userId, String password, String email, String userName, String profilePhoto) {
+        this.about = about;
+        this.lastMessage = lastMessage;
+        this.userId = userId;
+        this.password = password;
+        this.email = email;
+        this.userName = userName;
+        this.profilePhoto = profilePhoto;
+    }
+
+    public Users(String userName, String time) {
+        this.userName = userName;
+        this.time = time;
+    }
+
+    public Users() {
+    }
+
+    //SignUp constructor
+    public Users(String userName, String email, String password, String userId) {
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.userId = userId;
+    }
 
     public String getTime() {
         return time;
@@ -15,8 +44,6 @@ public class Users {
     public void setTime(String time) {
         this.time = time;
     }
-
-    String time;
 
     public String getAbout() {
         return about;
@@ -46,16 +73,16 @@ public class Users {
         return userName;
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public String getUserId(String key) {
         return userId;
     }
 
     public String getUserId() {
         return userId;
-    }
-
-    public void setProfilePhoto(String profilePhoto) {
-        this.profilePhoto = profilePhoto;
     }
 
     public void setUserId(String userId) {
@@ -78,43 +105,13 @@ public class Users {
         this.email = email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getProfilePhoto() {
         return profilePhoto;
     }
 
-    String about;
-    String story;
-
-    public Users(String about, String lastMessage, String userId, String password, String email, String userName, String profilePhoto) {
-        this.about = about;
-        this.lastMessage = lastMessage;
-        this.userId = userId;
-        this.password = password;
-        this.email = email;
-        this.userName = userName;
+    public void setProfilePhoto(String profilePhoto) {
         this.profilePhoto = profilePhoto;
     }
-
-    public Users(String userName, String time)
-    {
-        this.userName =userName;
-        this.time=time;
-    }
-
-    public Users(){}
-
-    //SignUp constructor
-    public Users(String userName, String email, String password, String userId) {
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-        this.userId = userId;
-    }
-
 
 
 }

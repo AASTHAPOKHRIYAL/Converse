@@ -41,16 +41,11 @@ public class Phone_send_otp extends AppCompatActivity {
         });
 
         binding.sendButton.setOnClickListener(v -> {
-            if(binding.editPhoneNo.getText().toString().trim().isEmpty())
-            {
+            if (binding.editPhoneNo.getText().toString().trim().isEmpty()) {
                 Toast.makeText(Phone_send_otp.this, "Phone number cannot be empty", Toast.LENGTH_SHORT).show();
-            }
-            else if (binding.editPhoneNo.getText().toString().trim().length() == 10)
-            {
+            } else if (binding.editPhoneNo.getText().toString().trim().length() == 10) {
                 sendOTP();
-            }
-            else
-            {
+            } else {
                 Toast.makeText(Phone_send_otp.this, "Invalid Phone number", Toast.LENGTH_SHORT).show();
             }
 
@@ -58,8 +53,7 @@ public class Phone_send_otp extends AppCompatActivity {
 
     }
 
-    public void sendOTP()
-    {
+    public void sendOTP() {
         binding.progressBar.setVisibility(View.VISIBLE);
         binding.sendButton.setVisibility(View.INVISIBLE);
         PhoneAuthProvider.OnVerificationStateChangedCallbacks callback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

@@ -23,7 +23,6 @@ public class DataModel {
     }
 
 
-
     public String getTarget() {
         return target;
     }
@@ -47,7 +46,6 @@ public class DataModel {
     public void setSender(String sender) {
         this.sender = sender;
     }
-
 
 
 }

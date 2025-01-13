@@ -52,11 +52,12 @@ public class ChatsFragment extends Fragment {
     UsersAdapter adapter;
     EditText search_view;
     ImageView profile_photo;
-    private String str="";
+    private String str = "";
 
 //    private boolean isToolbarHidden = false;
 
-    public ChatsFragment() { }
+    public ChatsFragment() {
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -221,8 +222,6 @@ public class ChatsFragment extends Fragment {
 //        });
 
 
-
-
         return view;
     }
 
@@ -232,7 +231,6 @@ public class ChatsFragment extends Fragment {
 //        Fire
 //    }
 }
-
 
 
 //    @Override

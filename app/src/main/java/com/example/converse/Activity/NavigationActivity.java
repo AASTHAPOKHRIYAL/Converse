@@ -37,20 +37,14 @@ public class NavigationActivity extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             setDotIndicator(position);
-            if(position>0)
-            {
+            if (position > 0) {
                 back.setVisibility(View.VISIBLE);
-            }
-            else
-            {
+            } else {
                 back.setVisibility(View.INVISIBLE);
             }
-            if(position==2)
-            {
+            if (position == 2) {
                 next.setText("Finish");
-            }
-            else
-            {
+            } else {
                 next.setText("Next");
             }
         }
@@ -60,6 +54,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +80,7 @@ public class NavigationActivity extends AppCompatActivity {
                 if (current < viewPagerAdapter.getCount()) {
                     viewPager.setCurrentItem(current, true);
                 } else {
-                    Intent intent = new Intent(getApplicationContext(), GetStarted.class);
+                    Intent intent = new Intent(getApplicationContext(), SignUp.class);
                     startActivity(intent);
                     finish();
                 }
@@ -112,13 +107,11 @@ public class NavigationActivity extends AppCompatActivity {
         viewPager.setOnPageChangeListener(viewPagerListener);
     }
 
-    public void setDotIndicator(int position)
-    {
+    public void setDotIndicator(int position) {
         dots = new TextView[3];
         dotIndicator.removeAllViews();
 
-        for(int i=0;i<dots.length;i++)
-        {
+        for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;", Html.FROM_HTML_MODE_LEGACY));
             dots[i].setTextSize(35);
@@ -128,8 +121,7 @@ public class NavigationActivity extends AppCompatActivity {
         dots[position].setTextColor(getResources().getColor(R.color.purple, getApplicationContext().getTheme()));
     }
 
-    private int getItem(int i)
-    {
+    private int getItem(int i) {
         return viewPager.getCurrentItem() + i;
     }
 }

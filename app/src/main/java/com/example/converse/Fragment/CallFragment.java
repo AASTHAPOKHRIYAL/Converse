@@ -36,46 +36,44 @@ import java.util.ArrayList;
 public class CallFragment extends Fragment {
     FragmentCallBinding binding;
     CallAdapter callAdapter;
-    String [] permissions= new String[] {Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO};
-    private int requestCode = 1;
+    String[] permissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO};
     ArrayList<Users> contacts = new ArrayList<>();
     FirebaseDatabase database;
     MainRepository mainRepository;
-
+    private int requestCode = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding= FragmentCallBinding.inflate(inflater, container, false);
+        binding = FragmentCallBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         database = FirebaseDatabase.getInstance();
         Log.d("TAG", "we are in the call fragment");
 
         callAdapter = new CallAdapter(contacts, getContext());
-        binding.recyclerView.setAdapter(callAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         binding.recyclerView.setLayoutManager(layoutManager);
+        binding.recyclerView.setAdapter(callAdapter);
 
         database.getReference().child("Users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-               contacts.clear();
+                contacts.clear();
 
                 Log.d("TAG", "Current User ID: ");
 
-               for(DataSnapshot snapshot1: snapshot.getChildren())
-               {
-                   Users users = snapshot1.getValue(Users.class);
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    Users users = snapshot1.getValue(Users.class);
 
-                   users.getUserId(snapshot1.getKey());
-                   contacts.add(users);
-                   Log.d("TAG", "Data fetched again: ");
-               }
+                    users.getUserId(snapshot1.getKey());
+                    contacts.add(users);
+                    Log.d("TAG", "Data fetched again: ");
+                }
 
-               callAdapter.notifyDataSetChanged();
+                callAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -84,13 +82,13 @@ public class CallFragment extends Fragment {
             }
         });
 
-        binding.addCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CallSubactivity.class);
-                startActivity(intent);
-            }
-        });
+//        binding.addCall.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), CallSubactivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 //        binding.searchContact.addTextChangedListener(new TextWatcher() {
 //            @Override
@@ -128,7 +126,6 @@ public class CallFragment extends Fragment {
 
         return view;
     }
-
 
 
 //    void askPermissions()

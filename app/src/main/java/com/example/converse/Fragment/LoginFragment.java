@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.converse.Activity.Account_created_popup_activity;
 import com.example.converse.Activity.MainPage;
 import com.example.converse.Activity.Phone_send_otp;
 import com.example.converse.Models.Users;
@@ -44,20 +45,18 @@ public class LoginFragment extends BottomSheetDialogFragment {
 
     private static final String TAG = "LoginFragment1";
     TextView textView5;
+    FirebaseDatabase database;
+    ImageButton googleBtn;
+    GoogleSignInClient googleSignInClient;
+    int RC_SIGN_IN = 20;
+    //PHONE LOGIN
+    ImageButton callBtn;
+
+    //GOOGLE LOGIN
     private Button button;
     private TextInputEditText emailText, passwordText;
     private FirebaseAuth auth;
     private ProgressDialog progressDialog;
-    FirebaseDatabase database;
-
-    //GOOGLE LOGIN
-
-    ImageButton googleBtn;
-    GoogleSignInClient googleSignInClient;
-    int RC_SIGN_IN = 20;
-
-    //PHONE LOGIN
-    ImageButton callBtn;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -167,7 +166,8 @@ public class LoginFragment extends BottomSheetDialogFragment {
             }
         });
     }
-//
+
+    //
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
