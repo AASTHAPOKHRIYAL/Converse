@@ -20,11 +20,11 @@ import com.google.gson.Gson;
 import java.util.Objects;
 
 public class FirebaseClient {
+    private static final String LATEST_EVENT_FIELD_NAME = "latest_event";
     private final Gson gson = new Gson();
     private final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-    private String currName;
-    private static final String LATEST_EVENT_FIELD_NAME = "latest_event";
     FirebaseAuth auth;
+    private String currName;
 
     public void login(String username, SuccessCallback callBack) {
         ref.child("Calls").child(username).setValue("") // Create the user's node in "Calls"
@@ -40,18 +40,14 @@ public class FirebaseClient {
     }
 
 
-    public void sendMessageToUser(DataModel dataModel, ErrorCallback errorCallback)
-    {
+    public void sendMessageToUser(DataModel dataModel, ErrorCallback errorCallback) {
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.child(dataModel.getTarget()).exists())
-                {
+                if (snapshot.child(dataModel.getTarget()).exists()) {
                     //send signal
                     ref.child(dataModel.getTarget()).child(LATEST_EVENT_FIELD_NAME).setValue(gson.toJson(dataModel));
-                }
-                else
-                {
+                } else {
                     errorCallback.onError("Error found");
                 }
             }
@@ -63,17 +59,16 @@ public class FirebaseClient {
         });
     }
 
-    public void observeIncomingLatestEvent(NewEventCallBack callBack)
-    {
-        Log.d("TAG", "Username: "+ currName + "received");
+    public void observeIncomingLatestEvent(NewEventCallBack callBack) {
+        Log.d("TAG", "Username: " + currName + "received");
         ref.child(currName).child(LATEST_EVENT_FIELD_NAME).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                try{
+                try {
                     String data = Objects.requireNonNull(snapshot.getValue()).toString();
                     DataModel dataModel = gson.fromJson(data, DataModel.class);
                     callBack.OnNewEventReceived(dataModel);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

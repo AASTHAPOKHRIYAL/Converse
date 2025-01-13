@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> {
 
     ArrayList<Users> list;
     Context context;
@@ -81,13 +81,11 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
             }
         });
 
-        FirebaseDatabase.getInstance().getReference().child("chats").child(FirebaseAuth.getInstance().getUid()+ users.getUserId()).orderByChild("timestamp").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("chats").child(FirebaseAuth.getInstance().getUid() + users.getUserId()).orderByChild("timestamp").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren())
-                {
-                    for(DataSnapshot snapshot1 : snapshot.getChildren())
-                    {
+                if (snapshot.hasChildren()) {
+                    for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                         holder.last_message.setText(Objects.requireNonNull(snapshot1.child("message").getValue()).toString());
                     }
                 }
@@ -119,12 +117,11 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        Log.d("TAG", "NO. OF USERS: "+list.size());
+        Log.d("TAG", "NO. OF USERS: " + list.size());
         return list.size(); //returning no of users
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
-    {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView user_name, last_message;
 

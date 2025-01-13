@@ -15,9 +15,9 @@ import com.example.converse.R;
 
 public class ViewPagerAdapter extends PagerAdapter {
     Context context;
-    int sliderImages[]={R.drawable.chatting_feature, R.drawable.call_feature};
-    int sliderTitle[]={R.string.break_the_ice, R.string.seemless_calls};
-    int sliderDesc[]={R.string.chat_with_your_friends_and_family ,R.string.voice_calls_or_video_calls};
+    int sliderImages[] = {R.drawable.chatting_feature, R.drawable.call_feature};
+    int sliderTitle[] = {R.string.break_the_ice, R.string.seemless_calls};
+    int sliderDesc[] = {R.string.chat_with_your_friends_and_family, R.string.voice_calls_or_video_calls};
 
     public ViewPagerAdapter(Context context) {
         this.context = context;

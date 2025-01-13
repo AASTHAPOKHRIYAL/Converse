@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/view_contact"
-        android:title="View contact"/>
+    <item
+        android:id="@+id/view_contact"
+        android:title="View contact" />
 
-    <item android:id="@+id/search"
-        android:title="Search"/>
+    <item
+        android:id="@+id/search"
+        android:title="Search" />
 
-    <item android:id="@+id/wallpaper"
-        android:title="Wallpaper"/>
+    <item
+        android:id="@+id/wallpaper"
+        android:title="Wallpaper" />
 
-    <item android:id="@+id/mute_notifications"
-        android:title="Mute notifications"/>
+    <item
+        android:id="@+id/mute_notifications"
+        android:title="Mute notifications" />
 
-    <item android:id="@+id/more"
+    <item
+        android:id="@+id/more"
         android:icon="@drawable/baseline_keyboard_arrow_right_24"
-        android:title="More"/>
+        android:title="More" />
 
 </menu>

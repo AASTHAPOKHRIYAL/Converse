@@ -102,7 +102,7 @@ public class Profile_Picture_Subactivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) { //TO SET THE IMAGE
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (data.getData() != null) {
+        if (resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri file = data.getData();
             binding.image.setImageURI(file);
 
@@ -120,7 +120,12 @@ public class Profile_Picture_Subactivity extends AppCompatActivity {
                         }
                     });
                 }
+            }).addOnFailureListener(e -> {
+                // Handle upload failure
+                binding.progressBar.setVisibility(View.GONE);
             });
+        } else {
+            binding.progressBar.setVisibility(View.GONE);
         }
     }
 }

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".Activity.Profile_Picture_Subactivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:layout_margin="10dp"
-        android:background="@color/black"
+        android:background="@color/white"
         app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +27,9 @@
                 android:id="@+id/back_arrow"
                 android:layout_width="56dp"
                 android:layout_height="54dp"
+                android:background="@color/white"
                 android:contentDescription="@string/back_arrow_chats_window"
                 android:padding="10dp"
-                android:background="@color/black"
                 android:src="@drawable/baseline_arrow_back_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/heading"
@@ -41,8 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="96dp"
+                android:fontFamily="sans-serif-black"
                 android:text="Profile"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -53,77 +54,77 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:elevation="8dp"
-            app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintStart_toStartOf="parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="8dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:background="@color/white"
-                android:clickable="true"
-                android:contentDescription="Profile picture"
-                android:scaleType="centerCrop"
-                android:src="@drawable/user" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:clickable="true"
+            android:contentDescription="Profile picture"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user" />
 
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:elevation="8dp"
-            app:cardCornerRadius="25dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView1"
-            app:layout_constraintEnd_toEndOf="@+id/cardView1">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView1"
+        app:layout_constraintEnd_toEndOf="@+id/cardView1">
 
-            <ImageView
-                android:id="@+id/plus"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:contentDescription="Profile picture"
-                android:background="@color/black"
-                android:scaleType="centerCrop"
-                android:src="@drawable/baseline_add_circle_24" />
+        <ImageView
+            android:id="@+id/plus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@color/black"
+            android:clickable="true"
+            android:contentDescription="Profile picture"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_add_circle_24" />
 
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/nameLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView1">
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_gravity="center"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:src="@drawable/account"
-            android:contentDescription="Username"/>
+            android:contentDescription="Username"
+            android:src="@drawable/account" />
 
 
         <TextView
@@ -131,20 +132,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
             android:text="Username"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/username"
             android:layout_width="240dp"
             android:layout_height="48dp"
-            android:hint="Enter username"
-            android:inputType="none"
             android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="10dp"
-            android:textColor="@color/white"
+            android:background="@color/white"
+            android:fontFamily="sans-serif"
+            android:hint="Enter username"
+            android:inputType="none"
+            android:textColor="@color/black"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -153,24 +157,23 @@
         android:id="@+id/aboutLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameLinearLayout"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameLinearLayout">
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/about"
-            android:layout_margin="10dp"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:layout_marginStart="10dp"
             android:background="@color/white"
-            android:contentDescription="aboutIcon"/>
+            android:contentDescription="aboutIcon"
+            android:src="@drawable/about" />
 
         <TextView
             android:id="@+id/textView3"
@@ -178,8 +181,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="26dp"
-            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
             android:text="About"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <EditText
@@ -187,11 +191,13 @@
             android:layout_width="240dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
+            android:layout_marginStart="26dp"
             android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            android:fontFamily="sans-serif"
             android:hint="Enter bio"
             android:inputType="none"
-            android:layout_marginStart="26dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -201,10 +207,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="@color/white"
+        android:background="@color/dark_purple"
+        android:fontFamily="sans-serif-black"
         android:text="Update"
-        android:textColor="@color/black"
-        app:cornerRadius="20dp"
+        android:textColor="@color/white"
+        app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboutLinearLayout" />
@@ -214,11 +221,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:outlineAmbientShadowColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/update_button"/>
-
+        app:layout_constraintTop_toBottomOf="@id/update_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

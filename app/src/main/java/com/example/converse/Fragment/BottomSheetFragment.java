@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.converse.Activity.Account_created_popup_activity;
 import com.example.converse.Activity.MainPage;
 import com.example.converse.Activity.Phone_send_otp;
 import com.example.converse.Models.Users;
@@ -40,17 +41,15 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     Button signUpButton;
     TextInputEditText usernameText, emailText, passwordText;
     TextView textView5;
-    private FirebaseAuth auth;
     FirebaseDatabase database;
     ProgressDialog progressDialog;
-
     //GOOGLE SIGN UP
     ImageButton google;
     GoogleSignInClient googleSignInClient;
     int RC_SIGN_IN = 25;
-
     //PHONE SIGN UP
     ImageButton call;
+    private FirebaseAuth auth;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -127,7 +126,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                                     Users user = new Users(Objects.requireNonNull(usernameText.getText()).toString(), emailText.getText().toString(), passwordText.getText().toString(), uid);
                                     database.getReference().child("Users").child(uid).setValue(user);
 
-                                    Intent intent = new Intent(getActivity(), MainPage.class);
+                                    Intent intent = new Intent(getActivity(), Account_created_popup_activity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
                                     requireActivity().finish();
@@ -196,7 +195,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                         String uid = user.getUid();
                         database.getReference().child("Users").child(uid).setValue(users);
 
-                        Intent intent = new Intent(getActivity(), MainPage.class);
+                        Intent intent = new Intent(getActivity(), Account_created_popup_activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         requireActivity().finish();

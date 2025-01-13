@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".Activity.NavigationActivity">
 
     <Button
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/dark_purple"
         android:drawableRight="@drawable/baseline_skip_next_24"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
@@ -30,6 +30,7 @@
         android:layout_width="368dp"
         android:layout_height="491dp"
         android:layout_margin="70dp"
+        android:contentDescription="Features page"
         app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,14 +42,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/dark_purple"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
         android:text="Back"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:cornerRadius="15dp"
         android:visibility="invisible"
+        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,7 +60,7 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/dark_purple"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
         android:text="Next"
@@ -73,12 +74,12 @@
         android:id="@+id/dot_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         android:outlineAmbientShadowColor="@color/white"
-        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/slide_view_pager"/>
+        app:layout_constraintStart_toStartOf="@+id/slide_view_pager" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.appbar.MaterialToolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/search_toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
+    android:background="@color/dark_purple"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -13,34 +12,33 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-    <!-- Back button or Hamburger icon (optional, if using drawer layout) -->
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/baseline_arrow_back_24"
-        android:contentDescription="Back" />
+        <!-- Back button or Hamburger icon (optional, if using drawer layout) -->
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/baseline_arrow_back_24" />
 
-    <!-- Search input field -->
-    <EditText
-        android:id="@+id/search_view"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:queryHint="Search chats"
-        android:iconifiedByDefault="false"
-        android:background="@android:color/transparent"
-        android:paddingStart="8dp" />
+        <!-- Search input field -->
+        <EditText
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:iconifiedByDefault="false"
+            android:paddingStart="8dp"
+            android:queryHint="Search chats" />
 
-    <ImageButton
-        android:id="@+id/search_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/baseline_search_24"
-        android:contentDescription="Search"
-        />
+        <ImageButton
+            android:id="@+id/search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Search"
+            android:src="@drawable/baseline_search_24" />
 
     </LinearLayout>
 

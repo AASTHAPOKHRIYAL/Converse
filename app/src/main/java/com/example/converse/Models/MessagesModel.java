@@ -5,15 +5,25 @@ public class MessagesModel {
     String uid, message;
     Long timestamp;
     String messageId;
+    String senderURL;
 
-    public String getMessageId() {
-        return messageId;
+    public String getReceiverURL() {
+        return receiverURL;
     }
 
-    public void setMessageId(String messageId) {
-        this.messageId = messageId;
+    public void setReceiverURL(String receiverURL) {
+        this.receiverURL = receiverURL;
     }
 
+    public String getSenderURL() {
+        return senderURL;
+    }
+
+    public void setSenderURL(String senderURL) {
+        this.senderURL = senderURL;
+    }
+
+    String receiverURL;
 
     public MessagesModel(String uid, String message, Long timestamp) {
         this.uid = uid;
@@ -26,7 +36,17 @@ public class MessagesModel {
         this.message = message;
     }
 
-    public MessagesModel(){}
+
+    public MessagesModel() {
+    }
+
+    public String getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(String messageId) {
+        this.messageId = messageId;
+    }
 
     public String getUid() {
         return uid;

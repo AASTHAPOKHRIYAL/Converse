@@ -18,6 +18,7 @@ public class phone_otp_verification extends AppCompatActivity {
 
     public ActivityPhoneOtpVerificationBinding binding;
     private String verificationId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,37 +43,30 @@ public class phone_otp_verification extends AppCompatActivity {
         binding.verifyBtn.setOnClickListener(v -> {
             binding.progressBar2.setVisibility(View.VISIBLE);
             binding.verifyBtn.setVisibility(View.INVISIBLE);
-            if(binding.et1.getText().toString().isEmpty() || binding.et2.getText().toString().isEmpty() || binding.et3.getText().toString().isEmpty() || binding.et4.getText().toString().isEmpty() || binding.et5.getText().toString().isEmpty() || binding.et6.getText().toString().isEmpty())
-            {
+            if (binding.et1.getText().toString().isEmpty() || binding.et2.getText().toString().isEmpty() || binding.et3.getText().toString().isEmpty() || binding.et4.getText().toString().isEmpty() || binding.et5.getText().toString().isEmpty() || binding.et6.getText().toString().isEmpty()) {
                 Toast.makeText(phone_otp_verification.this, "OTP cannot be empty", Toast.LENGTH_SHORT).show();
                 binding.verifyBtn.setVisibility(View.VISIBLE);
                 binding.progressBar2.setVisibility(View.INVISIBLE);
-            }
-            else
-            {
-                if(verificationId != null)
-                {
+            } else {
+                if (verificationId != null) {
                     String code = binding.et1.getText().toString() +
                             binding.et2.getText().toString() +
                             binding.et3.getText().toString() +
                             binding.et4.getText().toString() +
                             binding.et5.getText().toString() +
-                            binding.et6.getText().toString() ;
+                            binding.et6.getText().toString();
 
                     PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
                     FirebaseAuth.getInstance()
                             .signInWithCredential(credential).addOnCompleteListener(task -> {
-                                if(task.isSuccessful())
-                                {
+                                if (task.isSuccessful()) {
                                     binding.progressBar2.setVisibility(View.VISIBLE);
                                     binding.verifyBtn.setVisibility(View.INVISIBLE);
                                     Toast.makeText(phone_otp_verification.this, "OTP matched", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                                    Intent intent = new Intent(getApplicationContext(), Account_created_popup_activity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
-                                }
-                                else
-                                {
+                                } else {
                                     binding.progressBar2.setVisibility(View.GONE);
                                     binding.verifyBtn.setVisibility(View.VISIBLE);
 
@@ -110,8 +104,8 @@ public class phone_otp_verification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() == 1 && binding.et2.getText().toString() != null)
-                  binding.et2.requestFocus();
+                if (s.length() == 1 && binding.et2.getText().toString() != null)
+                    binding.et2.requestFocus();
             }
 
             @Override
@@ -127,8 +121,8 @@ public class phone_otp_verification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() == 1 && binding.et3.getText().toString() != null)
-                  binding.et3.requestFocus();
+                if (s.length() == 1 && binding.et3.getText().toString() != null)
+                    binding.et3.requestFocus();
             }
 
             @Override
@@ -144,8 +138,8 @@ public class phone_otp_verification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() == 1 && binding.et4.getText().toString() != null)
-                  binding.et4.requestFocus();
+                if (s.length() == 1 && binding.et4.getText().toString() != null)
+                    binding.et4.requestFocus();
             }
 
             @Override
@@ -161,8 +155,8 @@ public class phone_otp_verification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() == 1 && binding.et5.getText().toString() != null)
-                  binding.et5.requestFocus();
+                if (s.length() == 1 && binding.et5.getText().toString() != null)
+                    binding.et5.requestFocus();
             }
 
             @Override
@@ -178,8 +172,8 @@ public class phone_otp_verification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() == 1 && binding.et6.getText().toString() != null)
-                  binding.et6.requestFocus();
+                if (s.length() == 1 && binding.et6.getText().toString() != null)
+                    binding.et6.requestFocus();
             }
 
             @Override

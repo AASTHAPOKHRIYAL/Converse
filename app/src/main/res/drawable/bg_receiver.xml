@@ -48,8 +48,10 @@
 
     <item android:right="10dp">
         <shape android:shape="rectangle">
-            <solid android:color="#ece5fe" />
-            <corners android:bottomLeftRadius="0dp" android:radius="100dp" />
+            <solid android:color="#efdae0" />
+            <corners
+                android:bottomLeftRadius="0dp"
+                android:radius="100dp" />
         </shape>
     </item>
 

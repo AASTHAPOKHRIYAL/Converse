@@ -1,15 +1,18 @@
 package com.example.converse.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.converse.Activity.CallSubactivity;
 import com.example.converse.Models.Users;
 import com.example.converse.R;
 import com.example.converse.Repository.MainRepository;
@@ -21,9 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CallAdapter extends RecyclerView.Adapter<CallAdapter.CallViewHolder> {
+    Context context;
     private ArrayList<Users> usernames;  // Assume this is a list of usernames
     private MainRepository mainRepository;
-    Context context;
+
     public CallAdapter(ArrayList<Users> usernames, Context context) {
         this.usernames = usernames;
         this.mainRepository = MainRepository.getInstance();  // Get instance of MainRepository
@@ -43,34 +47,33 @@ public class CallAdapter extends RecyclerView.Adapter<CallAdapter.CallViewHolder
         String username = user.getUserName();  // Assuming getUsername() returns the username as a String
         holder.usernameTextView.setText(username);
 
-        if(user.getProfilePhoto()!=null)
-        {
+        if (user.getProfilePhoto() != null) {
             Picasso.get().load(user.getProfilePhoto()).placeholder(R.drawable.user).into(holder.profileImage);
-        }
-        else
-        {
+        } else {
             holder.profileImage.setImageResource(R.drawable.user);
         }
 
         holder.callBtn.setOnClickListener(v -> {
             // Handle click to start call
-            startCall(username);
+//            startCall(username);
+            Intent intent = new Intent(context, CallSubactivity.class);
+            context.startActivity(intent);
         });
     }
 
-    private void startCall(String username) {
-        mainRepository.sendCallRequest(username, new ErrorCallback() {
-            @Override
-            public void onError(String error) {
-                Log.e("CallAdapter", "Failed to send call request: " + error);
-            }
-        }, new SuccessCallback() {
-            @Override
-            public void onSuccess() {
-                Log.d("CallAdapter", "Call request sent successfully to " + username);
-            }
-        });
-    }
+//    private void startCall(String username) {
+//        mainRepository.sendCallRequest(username, new ErrorCallback() {
+//            @Override
+//            public void onError(String error) {
+//                Log.e("CallAdapter", "Failed to send call request: " + error);
+//            }
+//        }, new SuccessCallback() {
+//            @Override
+//            public void onSuccess() {
+//                Log.d("CallAdapter", "Call request sent successfully to " + username);
+//            }
+//        });
+//    }
 
     @Override
     public int getItemCount() {
@@ -84,7 +87,7 @@ public class CallAdapter extends RecyclerView.Adapter<CallAdapter.CallViewHolder
 
         public CallViewHolder(@NonNull View itemView) {
             super(itemView);
-            usernameTextView = itemView.findViewById(R.id.user_namee);  // Update with actual ID
+            usernameTextView = itemView.findViewById(R.id.username);  // Update with actual ID
             callBtn = itemView.findViewById(R.id.callBtn);
             profileImage = itemView.findViewById(R.id.profile_image);
         }

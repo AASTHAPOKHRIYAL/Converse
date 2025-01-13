@@ -1,91 +1,95 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black">
+    android:background="@color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/profile_quote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+        <ImageView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:src="@drawable/converse_logo2"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:elevation="8dp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:elevation="8dp"
-                app:cardCornerRadius="50dp"
-                app:cardBackgroundColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:adjustViewBounds="true"
+                android:background="@color/white"
+                android:clickable="true"
+                android:contentDescription="Profile picture"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user" />
 
-                <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:background="@color/white"
-                    android:clickable="true"
-                    android:contentDescription="Profile picture"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/user" />
-
-            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
             android:text="Miranda West"
-            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView1" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Work hard in silence. Let your success be the noise."
-            android:textColor="@color/white"
-            android:textSize="15sp"
+            android:fontFamily="sans-serif-black"
             android:padding="10dp"
+            android:text="Work hard in silence. Let your success be the noise."
+            android:textColor="@color/black"
+            android:textSize="15sp"
             android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_name"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_gravity="center_horizontal"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/black"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_quote">
 
 
@@ -94,10 +98,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -126,8 +130,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
                     android:text="Profile Picture"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -161,8 +166,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
                     android:text="My Account"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -213,8 +219,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
                     android:text="Notifications"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -249,8 +256,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
                     android:text="Devices"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -287,8 +295,9 @@
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:focusable="true"
+                    android:fontFamily="sans-serif-black"
                     android:text="Privacy"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -323,8 +332,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
                     android:text="Language"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -338,6 +348,6 @@
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

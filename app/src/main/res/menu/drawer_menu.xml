@@ -2,20 +2,20 @@
 
     <item
         android:id="@+id/settings"
-        android:title="Settings"
-        android:icon="@drawable/baseline_settings_24"/>
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Settings" />
     <item
         android:id="@+id/help"
-        android:title="Help"
-        android:icon="@drawable/baseline_help_center_24"/>
+        android:icon="@drawable/baseline_help_center_24"
+        android:title="Help" />
     <item
         android:id="@+id/invite_friends"
-        android:title="Invite friends"
-        android:icon="@drawable/baseline_supervisor_account_24" />
+        android:icon="@drawable/baseline_supervisor_account_24"
+        android:title="Invite friends" />
 
     <item
         android:id="@+id/logout"
-        android:title="Logout"
-        android:icon="@drawable/baseline_logout_24"/>
+        android:icon="@drawable/baseline_logout_24"
+        android:title="Logout" />
 
 </menu>
