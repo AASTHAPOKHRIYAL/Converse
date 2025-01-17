@@ -47,10 +47,11 @@ public class Profile_Picture_Subactivity extends AppCompatActivity {
 
         binding.progressBar.setVisibility(View.GONE);
 
-        //BACK BUTTON
+        // BACK BUTTON
         binding.backArrow.setOnClickListener(v -> finish());
 
-        database.getReference().child("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
+        // Load user data from Firebase
+        database.getReference().child("Users").child(Objects.requireNonNull(auth.getUid()))
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -68,62 +69,62 @@ public class Profile_Picture_Subactivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        // Handle database error if necessary
                     }
                 });
 
+        // Update user data
         binding.updateButton.setOnClickListener(v -> {
-
             binding.progressBar.setVisibility(View.VISIBLE);
 
+            String updatedUserName = binding.username.getText().toString();
+            String updatedAbout = binding.about.getText().toString();
+
             database.getReference().child("Users")
-                    .child(FirebaseAuth.getInstance().getUid())
+                    .child(auth.getUid())
                     .child("userName")
-                    .setValue(binding.username.getText().toString());
-
-            database.getReference().child("Users")
-                    .child(FirebaseAuth.getInstance().getUid())
-                    .child("about")
-                    .setValue(binding.about.getText().toString());
-
-            binding.progressBar.setVisibility(View.GONE);
-
+                    .setValue(updatedUserName)
+                    .addOnSuccessListener(unused -> {
+                        database.getReference().child("Users")
+                                .child(auth.getUid())
+                                .child("about")
+                                .setValue(updatedAbout)
+                                .addOnSuccessListener(unused1 -> binding.progressBar.setVisibility(View.GONE))
+                                .addOnFailureListener(e -> binding.progressBar.setVisibility(View.GONE));
+                    })
+                    .addOnFailureListener(e -> binding.progressBar.setVisibility(View.GONE));
         });
 
-        binding.plus.setOnClickListener(v -> { //FOR OPENING GALLARY
-            Intent galaryIntent = new Intent();
-            galaryIntent.setAction(Intent.ACTION_GET_CONTENT);
-            galaryIntent.setType("image/*");
-            startActivityForResult(galaryIntent, 33);
+        // Open gallery
+        binding.plus.setOnClickListener(v -> {
+            Intent galleryIntent = new Intent();
+            galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+            galleryIntent.setType("image/*");
+            startActivityForResult(galleryIntent, 33);
         });
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) { //TO SET THE IMAGE
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri file = data.getData();
             binding.image.setImageURI(file);
-
             binding.progressBar.setVisibility(View.VISIBLE);
 
             final StorageReference reference = storage.getReference().child("profilePhoto")
-                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()));
-            reference.putFile(file).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            database.getReference().child("Users").child(auth.getUid()).child("profilePhoto").setValue(uri.toString());
-                        }
-                    });
-                }
-            }).addOnFailureListener(e -> {
-                // Handle upload failure
-                binding.progressBar.setVisibility(View.GONE);
-            });
+                    .child(Objects.requireNonNull(auth.getUid()));
+            reference.putFile(file)
+                    .addOnSuccessListener(taskSnapshot -> reference.getDownloadUrl().addOnSuccessListener(uri -> {
+                        database.getReference().child("Users")
+                                .child(auth.getUid())
+                                .child("profilePhoto")
+                                .setValue(uri.toString())
+                                .addOnSuccessListener(unused -> binding.progressBar.setVisibility(View.GONE))
+                                .addOnFailureListener(e -> binding.progressBar.setVisibility(View.GONE));
+                    }).addOnFailureListener(e -> binding.progressBar.setVisibility(View.GONE)))
+                    .addOnFailureListener(e -> binding.progressBar.setVisibility(View.GONE));
         } else {
             binding.progressBar.setVisibility(View.GONE);
         }

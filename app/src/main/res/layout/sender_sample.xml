@@ -2,73 +2,72 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true">
+        android:orientation="horizontal">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="2dp"
-        android:background="@drawable/bg_sender"
-        android:maxWidth="310dp"
-        android:maxHeight="400dp"
-        android:minHeight="30dp">
-
-        <TextView
-            android:id="@+id/sender_text"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:fontFamily="sans-serif-black"
-            android:inputType="textLongMessage|textMultiLine"
-            android:maxWidth="270dp"
-            android:minWidth="50dp"
-            android:text="tegvede"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/sender_time"
-            app:layout_constraintEnd_toEndOf="@id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_alignParentEnd="true"
+            android:layout_margin="2dp"
+            android:background="@drawable/bg_sender"
+            android:maxWidth="310dp"
+            android:maxHeight="400dp"
+            android:minHeight="30dp">
 
-        <TextView
-            android:id="@+id/sender_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="3dp"
-            android:fontFamily="sans-serif"
-            android:text="12:00"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/guideline" />
+            <TextView
+                android:id="@+id/sender_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="sans-serif-black"
+                android:inputType="textLongMessage|textMultiLine"
+                android:maxWidth="270dp"
+                android:minWidth="50dp"
+                android:text="tegvede"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@+id/sender_time"
+                app:layout_constraintEnd_toEndOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/sender_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="sans-serif"
+                android:text="12:00"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/guideline" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView1"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:elevation="8dp"
             android:layout_margin="5dp"
+            android:elevation="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="35dp">
 

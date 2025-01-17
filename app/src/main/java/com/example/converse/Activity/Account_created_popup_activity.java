@@ -14,7 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.converse.R;
 
 public class Account_created_popup_activity extends AppCompatActivity {
-Button button;
+    Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

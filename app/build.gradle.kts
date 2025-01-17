@@ -64,5 +64,6 @@ dependencies {
     implementation("com.mesibo.api:webrtc:1.0.5")
     implementation("com.guolindev.permissionx:permissionx:1.6.1")
 
+    implementation("androidx.work:work-runtime:2.8.0")
 
 }

@@ -33,9 +33,8 @@ public class MainPage extends AppCompatActivity {
         BottomNavigationView bottom_navigation = findViewById(R.id.bottom_navigation);
         if (bottom_navigation == null) {
             Log.e("MainPage", "BottomNavigationView is null. Check the layout.");
-            return; // Early return to prevent further issues
+            return;
         } else {
-            // Set listeners only if bottom_navigation is not null
             bottom_navigation.setOnItemSelectedListener(item -> {
                 int id = item.getItemId();
                 if (id == R.id.chats) {
@@ -50,7 +49,6 @@ public class MainPage extends AppCompatActivity {
             bottom_navigation.setSelectedItemId(R.id.chats);
         }
 
-        // Apply window insets if necessary
         ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
             WindowInsetsCompat windowInsets = ViewCompat.getRootWindowInsets(v);
             if (windowInsets != null) {
