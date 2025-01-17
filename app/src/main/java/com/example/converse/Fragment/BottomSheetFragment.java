@@ -141,13 +141,13 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         });
 
         //FOR PHONE SIGN UP
-        call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Phone_send_otp.class);
-                startActivity(intent);
-            }
-        });
+//        call.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), Phone_send_otp.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private void googleSignUp() {
@@ -186,7 +186,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                     FirebaseUser user = auth.getCurrentUser();
 
                     if (user != null) {
-                        Users users = new Users(user.getDisplayName(), user.getEmail(), "", user.getUid()); // Assuming password is not needed for Google sign-in
+                        Users users = new Users(user.getDisplayName(), user.getEmail(), "", user.getUid());
 
                         if (user.getPhotoUrl() != null) {
                             users.setProfilePhoto(user.getPhotoUrl().toString());

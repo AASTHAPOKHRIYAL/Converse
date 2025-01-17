@@ -14,6 +14,7 @@ firebaseAuth = "23.0.0"
 firebaseDatabase = "21.0.0"
 navigationFragment = "2.8.0"
 navigationUi = "2.8.0"
+workRuntime = "2.9.1"
 
 [libraries]
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
@@ -30,6 +31,12 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
+work-gcm = { module = "androidx.work:work-gcm", version.ref = "workRuntime" }
+work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "workRuntime" }
+work-runtime = { module = "androidx.work:work-runtime", version.ref = "workRuntime" }
+work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntime" }
+work-rxjava2 = { module = "androidx.work:work-rxjava2", version.ref = "workRuntime" }
+work-testing = { module = "androidx.work:work-testing", version.ref = "workRuntime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -54,6 +56,15 @@ public class Chat_window extends AppCompatActivity {
 
         Log.d("Haha", "sender id" + senderId);
         Log.d("Haha", "receiver id" + receiverId);
+
+        binding.scheduleMessageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MessageSchedulerActivity.class);
+                intent.putExtra("receiverId", receiverId);
+                startActivity(intent);
+            }
+        });
 //        if (receiverId == null || receiverId.isEmpty()) {
 //            Log.e("Chat_window", "Receiver ID is null or empty!");
 //        } else {

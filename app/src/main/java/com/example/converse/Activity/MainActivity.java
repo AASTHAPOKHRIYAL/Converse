@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
             FirebaseUser currUser = auth.getCurrentUser();
 
             Intent intent;
-                    if (currUser != null) {
-                        Log.d("FirebaseUser", "User ID: " + currUser.getUid());
-                        intent = new Intent(getApplicationContext(), MainPage.class);
-                    } else {
-                        Log.d("FirebaseUser", "No user logged in.");
-                        intent = new Intent(getApplicationContext(), NavigationActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    }
+            if (currUser != null) {
+                Log.d("FirebaseUser", "User ID: " + currUser.getUid());
+                intent = new Intent(getApplicationContext(), MainPage.class);
+            } else {
+                Log.d("FirebaseUser", "No user logged in.");
+                intent = new Intent(getApplicationContext(), NavigationActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            }
 
             startActivity(intent);
             overridePendingTransition(R.anim.features_right_slide_animation, R.anim.slapsh_screen_slid_animation);

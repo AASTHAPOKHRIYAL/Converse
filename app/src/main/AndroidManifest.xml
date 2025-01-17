@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+<!--    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />-->
 
     <application
         android:allowBackup="true"
@@ -27,14 +28,17 @@
         android:theme="@style/Theme.Converse"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.MessageReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MessageSchedulerActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Account_created_popup_activity"
             android:exported="false"
             android:theme="@style/Theme.Converse" />
         <activity
             android:name=".Activity.ZoomProfilePhoto"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.GetStarted"
             android:exported="false" />
         <activity
             android:name=".Activity.NavigationActivity"
@@ -57,11 +61,11 @@
         <activity
             android:name=".Activity.MainPage"
             android:exported="false" />
+
+        <receiver android:name=".Activity.MessageReceiver" />
+
         <activity
             android:name=".Activity.SignUp"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.Features"
             android:exported="false" />
         <activity
             android:name=".Activity.MainActivity"

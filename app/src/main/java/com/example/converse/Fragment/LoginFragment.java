@@ -148,13 +148,13 @@ public class LoginFragment extends BottomSheetDialogFragment {
             requireActivity().finish();
         }
 
-        callBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Phone_send_otp.class);
-                startActivity(intent);
-            }
-        });
+//        callBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), Phone_send_otp.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private void googleSignIn() {
