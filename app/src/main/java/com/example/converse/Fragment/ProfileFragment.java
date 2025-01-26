@@ -1,6 +1,13 @@
 package com.example.converse.Fragment;
 
+import static androidx.core.app.ActivityCompat.recreate;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
@@ -84,7 +92,77 @@ public class ProfileFragment extends Fragment {
             Intent intent = new Intent(getActivity(), Profile_Picture_Subactivity.class);
             startActivityForResult(intent, 33);
         });
+
+        loadLocale();
+
+        language_layout.setOnClickListener(v-> {
+            changeLanguage();
+        });
     }
+
+    private void changeLanguage() {
+        String[] languages = {"English", "Hindi"};
+
+        // Check if the fragment is still attached to an activity
+        if (getContext() == null) {
+            return;
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Choose desired language");
+        builder.setSingleChoiceItems(languages, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Dismiss the dialog first
+                dialog.dismiss();
+
+                if (which == 0) {
+                    setLocale("");
+                    if (getActivity() != null) {
+                        getActivity().recreate();
+                    }
+                } else if (which == 1) {
+                    setLocale("hi");
+                    if (getActivity() != null) {
+                        getActivity().recreate();
+                    }
+                }
+            }
+        });
+
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                // Ensure dialog is dismissed
+                dialog.dismiss();
+            }
+        });
+
+        // Create and show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void setLocale(String language) {
+        Locale locale = new Locale(language);
+        locale.setDefault(locale);
+
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        requireContext().getResources().updateConfiguration(configuration, requireContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE).edit();
+        editor.putString("App_Lang", language);
+        editor.apply();
+    }
+
+    private void loadLocale()
+    {
+        SharedPreferences preferences = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        String language = preferences.getString("App_Lang", "");
+        setLocale(language);
+    }
+
 
 //    @Override
 //    public void onBackPressed() {

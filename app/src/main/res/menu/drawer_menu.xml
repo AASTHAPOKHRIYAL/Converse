@@ -3,19 +3,19 @@
     <item
         android:id="@+id/settings"
         android:icon="@drawable/baseline_settings_24"
-        android:title="Settings" />
+        android:title="@string/settings" />
     <item
         android:id="@+id/help"
         android:icon="@drawable/baseline_help_center_24"
-        android:title="Help" />
+        android:title="@string/help" />
     <item
         android:id="@+id/invite_friends"
         android:icon="@drawable/baseline_supervisor_account_24"
-        android:title="Invite friends" />
+        android:title="@string/invite_friends" />
 
     <item
         android:id="@+id/logout"
         android:icon="@drawable/baseline_logout_24"
-        android:title="Logout" />
+        android:title="@string/logout" />
 
 </menu>

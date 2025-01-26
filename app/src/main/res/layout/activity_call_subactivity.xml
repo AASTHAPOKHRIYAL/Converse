@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:layout_weight="6"
             android:gravity="center"
-            android:text="someone is calling"
+            android:text="@string/someone_is_calling"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -30,6 +30,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.5"
             android:padding="15dp"
+            android:contentDescription="@string/accept2"
             android:src="@drawable/ic_accept" />
 
         <ImageView
@@ -38,6 +39,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.5"
             android:padding="15dp"
+            android:contentDescription="@string/end_call"
             android:src="@drawable/ic_reject" />
 
     </LinearLayout>
@@ -53,7 +55,10 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_margin="30dp"
-            android:hint="who to call ?" />
+            android:autofillHints="Name"
+            android:textColor="@color/black"
+            android:inputType="none"
+            android:hint="@string/who_to_call" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/callBtn"
@@ -63,7 +68,7 @@
             android:layout_below="@id/targetUserNameEt"
             android:layout_marginHorizontal="30dp"
             android:background="@drawable/rounded_button"
-            android:text="call" />
+            android:text="@string/call" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -109,6 +114,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="12dp"
+                android:contentDescription="@string/microphone"
                 app:backgroundTint="@color/cardview_dark_background"
                 app:srcCompat="@drawable/mic_off" />
 
@@ -121,6 +127,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="12dp"
+                android:contentDescription="@string/video"
                 app:backgroundTint="@color/cardview_dark_background"
                 app:srcCompat="@drawable/videocam_off" />
 
@@ -133,6 +140,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="12dp"
+                android:contentDescription="@string/end_call"
                 app:backgroundTint="@color/cardview_dark_background"
                 app:srcCompat="@drawable/ic_reject" />
 
@@ -146,7 +154,8 @@
                 android:focusable="true"
                 android:padding="12dp"
                 app:backgroundTint="@color/cardview_dark_background"
-                app:srcCompat="@drawable/cameraswitch" />
+                app:srcCompat="@drawable/cameraswitch"
+                android:contentDescription="@string/switch_camera"/>
         </LinearLayout>
 
     </RelativeLayout>

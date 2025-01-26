@@ -27,7 +27,8 @@
             android:adjustViewBounds="true"
             android:background="@color/white"
             android:clickable="true"
-            android:contentDescription="Profile picture"
+            android:contentDescription="@string/profile_picture"
+            android:focusable="true"
             android:scaleType="centerCrop"
             android:src="@drawable/user" />
 
@@ -47,7 +48,7 @@
             android:fontFamily="sans-serif-black"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="Aastha"
+            android:text="@string/username"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -59,7 +60,7 @@
             android:fontFamily="sans-serif"
             android:maxLines="1"
             android:paddingBottom="5dp"
-            android:text="Hii how are thee"
+            android:text="@string/hii_how_are_thee"
             android:textColor="#717171"
             android:textSize="14sp" />
 
