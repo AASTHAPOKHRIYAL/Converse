@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Schedule Message"
+        android:text="@string/schedule_message"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -40,7 +40,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Enter your message"
+        android:hint="@string/enter_your_message"
         android:padding="12dp"
         android:textColor="@color/black"
         android:textColorHint="@color/grey"
@@ -63,7 +63,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Pick a date"
+            android:contentDescription="@string/pick_a_date"
             android:src="@drawable/baseline_edit_calendar_24" />
 
         <ImageButton
@@ -72,7 +72,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Pick a time"
+            android:contentDescription="@string/pick_a_time"
             android:src="@drawable/baseline_timer_24" />
     </LinearLayout>
 
@@ -84,7 +84,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#43A047"
-        android:text="Schedule"
+        android:text="@string/schedule"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +99,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#E53935"
-        android:text="Cancel"
+        android:text="@string/cancel"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

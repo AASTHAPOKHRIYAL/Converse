@@ -39,7 +39,8 @@
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:clickable="true"
-                    android:contentDescription="Profile picture"
+                    android:contentDescription="@string/profile_picture"
+                    android:focusable="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/user" />
 
@@ -51,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="sans-serif-black"
-                android:text="Aastha"
+                android:text="@string/username"
                 android:textColor="@color/dark_purple"
                 android:textSize="25sp"
                 android:textStyle="bold" />

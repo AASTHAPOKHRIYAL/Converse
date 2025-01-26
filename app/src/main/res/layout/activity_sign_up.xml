@@ -27,7 +27,7 @@
             android:fontFamily="sans-serif-black"
             android:gravity="top"
             android:padding="30dp"
-            android:text="Lets get started!"
+            android:text="@string/lets_get_started"
             android:textColor="@color/black"
             android:textSize="35sp"
             android:textStyle="bold">
@@ -40,7 +40,7 @@
             android:layout_height="250dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="15dp"
-            android:contentDescription="decorative image"
+            android:contentDescription="@string/decorative_image"
             android:src="@drawable/chatting_app">
 
         </ImageView>
@@ -53,10 +53,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="32dp"
             android:background="@drawable/button_background"
-            android:contentDescription="sign_up_button_sign_up_pg"
+            android:contentDescription="@string/sign_up"
             android:fontFamily="sans-serif-black"
             android:padding="15dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textColor="@android:color/black"
             android:textSize="20sp">
 
@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="Already have an account?"
+                android:text="@string/already_have_an_account"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -82,9 +82,9 @@
                 android:id="@+id/loginText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="login_button_sign_up_pg"
+                android:contentDescription="@string/login"
                 android:fontFamily="sans-serif-black"
-                android:text=" Login"
+                android:text="@string/login"
                 android:textColor="@color/yellow"
                 android:textSize="20sp" />
 

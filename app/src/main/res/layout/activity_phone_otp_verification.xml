@@ -12,7 +12,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="60dp"
-        android:contentDescription="decorative image"
+        android:contentDescription="@string/decorative_image"
         android:src="@drawable/otp_verification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,12 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-black"
-        android:text="Verify OTP"
+        android:text="@string/verify_otp"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -41,7 +40,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="sans-serif-black"
-        android:text="Enter your received OTP here"
+        android:text="@string/enter_your_received_otp_here"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +71,6 @@
         android:orientation="horizontal"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_no">
 
@@ -83,12 +81,11 @@
             android:layout_weight="1"
             android:background="@drawable/phone_input_background"
             android:fontFamily="sans-serif-black"
-            android:hint="1"
+            android:hint="@string/_1"
             android:inputType="number"
             android:maxLength="1"
             android:padding="8dp"
             android:textColor="@color/black"
-            tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="386dp" />
 
         <Space
@@ -102,12 +99,11 @@
             android:layout_weight="1"
             android:background="@drawable/phone_input_background"
             android:fontFamily="sans-serif-black"
-            android:hint="2"
+            android:hint="@string/_2"
             android:inputType="number"
             android:maxLength="1"
             android:padding="8dp"
             android:textColor="@color/black"
-            tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="386dp" />
 
         <Space
@@ -121,12 +117,11 @@
             android:layout_weight="1"
             android:background="@drawable/phone_input_background"
             android:fontFamily="sans-serif-black"
-            android:hint="3"
+            android:hint="@string/_3"
             android:inputType="number"
             android:maxLength="1"
             android:padding="8dp"
             android:textColor="@color/black"
-            tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="386dp" />
 
         <Space
@@ -140,12 +135,11 @@
             android:layout_weight="1"
             android:background="@drawable/phone_input_background"
             android:fontFamily="sans-serif-black"
-            android:hint="4"
+            android:hint="@string/_4"
             android:inputType="number"
             android:maxLength="1"
             android:padding="8dp"
             android:textColor="@color/black"
-            tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="386dp" />
 
         <Space
@@ -159,12 +153,11 @@
             android:layout_weight="1"
             android:background="@drawable/phone_input_background"
             android:fontFamily="sans-serif-black"
-            android:hint="5"
+            android:hint="@string/_5"
             android:inputType="number"
             android:maxLength="1"
             android:padding="8dp"
             android:textColor="@color/black"
-            tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="386dp" />
 
         <Space
@@ -178,12 +171,11 @@
             android:layout_weight="1"
             android:background="@drawable/phone_input_background"
             android:fontFamily="sans-serif-black"
-            android:hint="6"
+            android:hint="@string/_6"
             android:inputType="number"
             android:maxLength="1"
             android:padding="8dp"
             android:textColor="@color/black"
-            tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="386dp" />
 
 
@@ -196,7 +188,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
         android:fontFamily="sans-serif-black"
-        android:text="Didn't get your OTP?"
+        android:text="@string/didn_t_get_your_otp"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -206,17 +198,16 @@
         android:id="@+id/resendBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="Resend OTP"
+        android:contentDescription="@string/resend_otp"
         android:fontFamily="sans-serif-black"
-        android:text="Resend OTP"
+        android:text="@string/resend_otp_otp_verification_activity"
         android:textColor="#357A99"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
         app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView12"
@@ -225,7 +216,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-black"
-        android:text="Not able to login? "
+        android:text="@string/not_able_to_login"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -240,7 +231,7 @@
         android:layout_marginEnd="124dp"
         android:contentDescription="Sign Up"
         android:fontFamily="sans-serif-black"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="#357A99"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView12"
@@ -256,7 +247,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:fontFamily="sans-serif-black"
-        android:text="Or"
+        android:text="@string/or"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/textView15"
@@ -272,7 +263,7 @@
         android:contentDescription="Login"
         android:fontFamily="sans-serif-black"
         android:paddingRight="10dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="#357A99"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -290,7 +281,7 @@
         android:background="@color/dark_purple"
         android:contentDescription="verify OTP"
         android:fontFamily="sans-serif-black"
-        android:text="Verify OTP"
+        android:text="@string/verify_otp_otp_verification"
         android:textColor="@color/white"
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"

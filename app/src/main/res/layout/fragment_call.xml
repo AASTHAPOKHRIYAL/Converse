@@ -24,7 +24,7 @@
         android:layout_marginStart="20dp"
         android:fontFamily="sans-serif-black"
         android:padding="10dp"
-        android:text="Calls"
+        android:text="@string/calls"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -84,7 +84,7 @@
         android:layout_marginBottom="40dp"
         android:background="@drawable/baseline_add_circle_24"
         android:backgroundTint="@color/dark_purple"
-        android:contentDescription="Placing a group call"
+        android:contentDescription="@string/placing_a_group_call"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

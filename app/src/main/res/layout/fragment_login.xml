@@ -25,7 +25,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="Email"
+            android:hint="@string/email"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:hintTextColor="@color/black"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="Password"
+            android:hint="@string/password"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:counterEnabled="true"
@@ -77,7 +77,7 @@
             android:layout_marginEnd="32dp"
             android:background="#00000000"
             android:fontFamily="sans-serif-black"
-            android:text="Forgot password"
+            android:text="@string/forgot_password"
             android:textAlignment="gravity"
             android:textColor="@color/black" />
 
@@ -88,10 +88,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="@color/dark_purple"
-            android:contentDescription="login"
+            android:contentDescription="@string/login"
             android:fontFamily="sans-serif-black"
             android:padding="15dp"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             app:cornerRadius="15dp" />
@@ -103,7 +103,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:fontFamily="sans-serif-black"
-            android:text="Or"
+            android:text="@string/or"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -134,7 +134,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/google"
-            android:contentDescription="Google"
+            android:contentDescription="@string/google"
             android:paddingStart="10dp"
             android:paddingEnd="10dp">
 
@@ -150,7 +150,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/facebook"
-            android:contentDescription="Facebook"
+            android:contentDescription="@string/facebook"
             android:paddingStart="10dp"
             android:paddingEnd="10dp">
 
@@ -166,7 +166,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/call"
-            android:contentDescription="Phone number login"
+            android:contentDescription="@string/call"
             android:paddingStart="10dp"
             android:paddingEnd="10dp">
 
@@ -199,7 +199,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:paddingTop="24dp"
-            android:text="Don't have an account? "
+            android:text="@string/don_t_have_an_account"
             android:textColor="@color/black"
             android:textSize="15sp">
 
@@ -209,10 +209,10 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="SignUp"
+            android:contentDescription="@string/sign_up"
             android:fontFamily="sans-serif-black"
             android:paddingTop="24dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textColor="#357A99"
             android:textSize="15sp" />
 

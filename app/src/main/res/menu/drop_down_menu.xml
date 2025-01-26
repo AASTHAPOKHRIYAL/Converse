@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/view_contact"
-        android:title="View contact" />
+        android:title="@string/view_contact" />
 
     <item
         android:id="@+id/search"
-        android:title="Search" />
+        android:title="@string/search" />
 
     <item
         android:id="@+id/wallpaper"
-        android:title="Wallpaper" />
+        android:title="@string/wallpaper" />
 
     <item
         android:id="@+id/mute_notifications"
-        android:title="Mute notifications" />
+        android:title="@string/mute_notifications" />
 
     <item
         android:id="@+id/more"
         android:icon="@drawable/baseline_keyboard_arrow_right_24"
-        android:title="More" />
+        android:title="@string/more" />
 
 </menu>
